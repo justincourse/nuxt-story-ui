@@ -1,0 +1,220 @@
+[
+  {
+    "id": "start",
+    "text": "外星人驾驶飞船<br>降落地球，遇到一个地球人，并说：你好！",
+    "options": [
+      { "label": "和外星人握手", "nextId": "step1_a" },
+      { "label": "转身逃跑", "nextId": "step1_b" },
+      { "label": "攻击外星人", "nextId": "end_c1" }
+    ]
+  },
+  {
+    "id": "step1_a",
+    "text": "你勇敢地和外星人握手，外星人露出了友好的微笑。",
+    "options": [
+      { "label": "邀请外星人参观城市", "nextId": "step2_a" },
+      { "label": "送外星人一份地球礼物", "nextId": "step2_b" }
+    ]
+  },
+  {
+    "id": "step1_b",
+    "text": "你转身逃跑，外星人感到困惑。",
+    "options": [
+      { "label": "回头道歉", "nextId": "step2_c" },
+      { "label": "继续逃跑", "nextId": "step2_d" }
+    ]
+  },
+  {
+    "id": "step2_a",
+    "text": "你带外星人参观了城市，外星人对地球科技产生了浓厚兴趣。",
+    "options": [
+      { "label": "介绍地球科技", "nextId": "step3_a" },
+      { "label": "带他去美食街", "nextId": "step3_b" }
+    ]
+  },
+  {
+    "id": "step2_b",
+    "text": "你送给外星人一份地球礼物，外星人非常感动。",
+    "options": [
+      { "label": "邀请外星人一起拍照", "nextId": "step3_c" },
+      { "label": "询问外星人来自哪里", "nextId": "step3_d" }
+    ]
+  },
+  {
+    "id": "step2_c",
+    "text": "你回头向外星人道歉，外星人表示理解并邀请你参观飞船。",
+    "options": [
+      { "label": "接受邀请", "nextId": "step3_e" },
+      { "label": "婉拒邀请", "nextId": "step3_f" }
+    ]
+  },
+  {
+    "id": "step2_d",
+    "text": "你一路狂奔，外星人决定跟上你。",
+    "options": [
+      { "label": "停下来解释", "nextId": "step3_f" },
+      { "label": "继续奔跑", "nextId": "step3_g" }
+    ]
+  },
+  {
+    "id": "step3_a",
+    "text": "你详细介绍了地球科技，外星人提出要交换科技。",
+    "options": [
+      { "label": "同意交换", "nextId": "step4_a" },
+      { "label": "拒绝交换", "nextId": "step4_b" }
+    ]
+  },
+  {
+    "id": "step3_b",
+    "text": "你们在美食街品尝美食，外星人对地球食物赞不绝口。",
+    "options": [
+      { "label": "推荐辣条", "nextId": "step4_c" },
+      { "label": "推荐冰淇淋", "nextId": "step4_d" }
+    ]
+  },
+  {
+    "id": "step3_c",
+    "text": "你们合影留念，外星人表示想带照片回家。",
+    "options": [
+      { "label": "打印照片送他", "nextId": "step4_e" },
+      { "label": "发电子版给他", "nextId": "step4_f" }
+    ]
+  },
+  {
+    "id": "step3_d",
+    "text": "外星人介绍了自己的星球，并邀请你去参观。",
+    "options": [
+      { "label": "答应邀请", "nextId": "step4_g" },
+      { "label": "婉拒邀请", "nextId": "step4_h" }
+    ]
+  },
+  {
+    "id": "step3_e",
+    "text": "你进入飞船，发现里面充满神奇科技。",
+    "options": [
+      { "label": "请求体验飞船驾驶", "nextId": "step4_a" },
+      { "label": "参观外星实验室", "nextId": "step4_c" }
+    ]
+  },
+  {
+    "id": "step3_f",
+    "text": "你婉拒了外星人的邀请，外星人有些失落。",
+    "options": [
+      { "label": "安慰外星人", "nextId": "step4_h" },
+      { "label": "转身离开", "nextId": "step4_i" }
+    ]
+  },
+  {
+    "id": "step3_g",
+    "text": "你继续奔跑，外星人最终放弃了追赶。",
+    "options": [
+      { "label": "回头看看", "nextId": "step4_i" },
+      { "label": "直接回家", "nextId": "step4_j" }
+    ]
+  },
+  {
+    "id": "step4_a",
+    "text": "你体验了飞船驾驶，感受到宇宙的浩瀚。",
+    "options": [
+      { "label": "请求外星人带你环游宇宙", "nextId": "end_a1" },
+      { "label": "返回地球", "nextId": "end_a2" }
+    ]
+  },
+  {
+    "id": "step4_b",
+    "text": "你拒绝了交换科技，外星人表示理解。",
+    "options": [
+      { "label": "邀请外星人品尝美食", "nextId": "step4_c" },
+      { "label": "送他地球纪念品", "nextId": "step4_e" }
+    ]
+  },
+  {
+    "id": "step4_c",
+    "text": "你们一起品尝了更多地球美食，外星人非常开心。",
+    "options": [
+      { "label": "合影留念", "nextId": "end_a1" },
+      { "label": "送他美食打包", "nextId": "end_a2" }
+    ]
+  },
+  {
+    "id": "step4_d",
+    "text": "外星人爱上了冰淇淋，决定带一些回星球。",
+    "options": [
+      { "label": "帮他打包", "nextId": "end_a2" },
+      { "label": "与他道别", "nextId": "end_b1" }
+    ]
+  },
+  {
+    "id": "step4_e",
+    "text": "你打印了照片，外星人感激地收下。",
+    "options": [
+      { "label": "邀请他再来地球", "nextId": "end_a1" },
+      { "label": "与他道别", "nextId": "end_b1" }
+    ]
+  },
+  {
+    "id": "step4_f",
+    "text": "你发了电子版照片，外星人高兴地展示给同伴。",
+    "options": [
+      { "label": "询问外星科技", "nextId": "step4_a" },
+      { "label": "与他道别", "nextId": "end_b1" }
+    ]
+  },
+  {
+    "id": "step4_g",
+    "text": "你答应参观外星球，外星人带你登上飞船。",
+    "options": [
+      { "label": "起飞前合影", "nextId": "end_a1" },
+      { "label": "请求带地球特产", "nextId": "end_a2" }
+    ]
+  },
+  {
+    "id": "step4_h",
+    "text": "你婉拒了外星人的邀请，外星人表示遗憾。",
+    "options": [
+      { "label": "送他地球纪念品", "nextId": "end_b1" },
+      { "label": "与他道别", "nextId": "end_b2" }
+    ]
+  },
+  {
+    "id": "step4_i",
+    "text": "你回头看，外星人已经离开，只留下飞船的痕迹。",
+    "options": [
+      { "label": "拍照留念", "nextId": "end_b2" },
+      { "label": "默默离开", "nextId": "end_b2" }
+    ]
+  },
+  {
+    "id": "step4_j",
+    "text": "你直接回家，心中充满疑惑和遗憾。",
+    "options": [
+      { "label": "写日记记录", "nextId": "end_b2" },
+      { "label": "决定以后勇敢面对", "nextId": "end_b1" }
+    ]
+  },
+  {
+    "id": "end_a1",
+    "text": "你和外星人成为了朋友，一起开启了宇宙冒险的新篇章。",
+    "options": []
+  },
+  {
+    "id": "end_a2",
+    "text": "外星人收到礼物，非常感动，邀请你一起去宇宙旅行。",
+    "options": []
+  },
+  {
+    "id": "end_b1",
+    "text": "你回头道歉，外星人理解了你的紧张，友好地挥手告别。",
+    "options": []
+  },
+  {
+    "id": "end_b2",
+    "text": "你一路狂奔，外星人默默离开了地球。",
+    "options": []
+  },
+  {
+    "id": "end_c1",
+    "text": "外星人逃跑了，发动了反攻。",
+    "options": []
+  }
+]

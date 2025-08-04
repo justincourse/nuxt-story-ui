@@ -1,9 +1,20 @@
-[
+export type StoryOption = {
+  label: string
+  nextId: string
+}
+
+export type StoryScene = {
+  id: string
+  text: string
+  options?: StoryOption[]
+}
+
+export const storyData: StoryScene[] = [
   {
     "id": "start",
-    "text": "外星人驾驶飞船<br>降落地球，遇到一个地球人，并说：你好！",
+    "text": "外星人驾驶飞船<br>降落地球，遇到一个地球人，并说：Hello！",
     "options": [
-      { "label": "和外星人握手", "nextId": "step1_a" },
+      { "label": "跟外星人握手", "nextId": "step1_a" },
       { "label": "转身逃跑", "nextId": "step1_b" },
       { "label": "攻击外星人", "nextId": "end_c1" }
     ]
@@ -218,3 +229,5 @@
     "options": []
   }
 ]
+
+export default storyData

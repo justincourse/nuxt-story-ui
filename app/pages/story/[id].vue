@@ -43,25 +43,15 @@
 <script setup lang="ts">
 import { UCard, UButton, UAlert } from '#components'
 import { useRoute, useRouter } from 'vue-router'
-import { ref, computed, onMounted } from 'vue'
+import { computed } from 'vue'
+import { storyData, type StoryOption, type StoryScene } from '~/story'
 
 const route = useRoute()
 const router = useRouter()
 const id = route.params.id as string
 
-type StoryOption = { label: string, nextId: string }
-type StoryScene = { id: string, text: string, options?: StoryOption[] }
-const story = ref<StoryScene[]>([])
-
-async function loadStory() {
-  if (import.meta.server) return
-  const res = await fetch('/story/story.json')
-  story.value = await res.json()
-}
-onMounted(loadStory)
-
 const scene = computed(() => {
-  return story.value.find((item) => item.id === id)
+  return storyData.find((item) => item.id === id)
 })
 
 function goTo(nextId: string) {

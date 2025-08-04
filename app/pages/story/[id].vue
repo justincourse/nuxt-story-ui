@@ -3,6 +3,14 @@
   <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-4">
     <UCard class="w-full max-w-2xl lg:max-w-4xl xl:max-w-5xl shadow-2xl border-2 border-blue-200 bg-white/90">
       <div v-if="scene">
+        <!-- 大结局标题 - 当没有选项时显示 -->
+        <div v-if="scene.options !== undefined && scene.options.length === 0" class="text-center mb-8">
+          <h1 class="text-4xl font-bold text-gradient bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent flex items-center justify-center gap-3">
+            🚀 大结局 🎭
+          </h1>
+          <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mt-4 rounded-full" />
+        </div>
+
         <!-- 图片显示 -->
         <div v-if="scene.image" class="mb-6 rounded-lg overflow-hidden">
           <img
@@ -19,7 +27,9 @@
         class="prose prose-lg max-w-none mb-6 text-gray-800"
           v-html="convertMarkdown(scene.text)"
         />
-        <div v-if="scene.options && scene.options.length">
+
+        <!-- 选项显示 -->
+        <div v-if="scene.options && scene.options.length > 0">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <UButton
               v-for="option in scene.options"
@@ -33,7 +43,9 @@
             </UButton>
           </div>
         </div>
-        <div v-else class="mt-8">
+
+        <!-- 故事结束提示 - 只在特定结局场景显示，不在 end_safe_return 等安全返回场景显示 -->
+        <div v-else-if="scene.options !== undefined && scene.options.length === 0 && scene.id !== 'end_safe_return'" class="mt-8">
           <UAlert color="success" variant="soft" class="text-center text-xl">
             故事结束 🎉
           </UAlert>

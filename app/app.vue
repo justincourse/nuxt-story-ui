@@ -14,8 +14,40 @@ export type StoryHistoryItem = {
   choice?: string
 }
 
-// 全局历史记录状态
-const storyHistory = ref<StoryHistoryItem[]>([])
+// localStorage 键名
+const STORY_HISTORY_KEY = 'nuxt-story-history'
+
+// 从 localStorage 加载历史记录
+function loadHistoryFromStorage(): StoryHistoryItem[] {
+  if (typeof window === 'undefined') return []
+
+  try {
+    const stored = localStorage.getItem(STORY_HISTORY_KEY)
+    return stored ? JSON.parse(stored) : []
+  } catch (error) {
+    console.error('加载历史记录失败:', error)
+    return []
+  }
+}
+
+// 保存历史记录到 localStorage
+function saveHistoryToStorage(history: StoryHistoryItem[]) {
+  if (typeof window === 'undefined') return
+
+  try {
+    localStorage.setItem(STORY_HISTORY_KEY, JSON.stringify(history))
+  } catch (error) {
+    console.error('保存历史记录失败:', error)
+  }
+}
+
+// 全局历史记录状态，初始化时从 localStorage 加载
+const storyHistory = ref<StoryHistoryItem[]>(loadHistoryFromStorage())
+
+// 监听历史记录变化，自动保存到 localStorage
+watch(storyHistory, (newHistory) => {
+  saveHistoryToStorage(newHistory)
+}, { deep: true })
 
 // 添加历史记录
 function addToHistory(scene: StoryScene, choice?: string) {
@@ -53,6 +85,10 @@ function goToHistoryScene(targetIndex: number) {
 // 清空历史记录
 function clearHistory() {
   storyHistory.value = []
+  // 同时清空 localStorage
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem(STORY_HISTORY_KEY)
+  }
 }
 
 // 提供给子组件使用

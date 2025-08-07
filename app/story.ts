@@ -10,6 +10,12 @@ export type StoryScene = {
   options?: StoryOption[]
 }
 
+export type StoryHistoryItem = {
+  scene: StoryScene
+  timestamp: number
+  choice?: string
+}
+
 export const storyData: StoryScene[] = [
   {
     "id": "start",
